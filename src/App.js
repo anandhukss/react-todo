@@ -57,6 +57,8 @@ function App() {
                       })
                     );
                   }}
+                  checked={todoData.status}
+                  value={todoData.status}
                   type="checkbox"
                   name=""
                   id=""
@@ -65,18 +67,14 @@ function App() {
               </div>
               <div className="right">
                 <i
-                  onClick={() => {
-                    var deleted=toDos.splice(
-                      toDos.findIndex(function (i) {
-                        return i.id === todoData.id;
-                      }),
-                      1
-                    );
-                    setTodos([...toDos]);
-                    console.log(deleted);
-                    console.log(toDos)
-
-                  }}
+                  onClick={() => setTodos(
+                      toDos.filter((obj)=>{
+                          return obj.id !== todoData.id
+                      })
+                  )
+                
+                
+                }
                   className="fas fa-times"
                 ></i>
               </div>
