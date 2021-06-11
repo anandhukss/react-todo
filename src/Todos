@@ -1,0 +1,23 @@
+import React from "react";
+
+
+
+function Todos(props) {
+  let color = "orange";
+  
+  return (
+    <div className="todos">
+      <div style={{ background:color }} className="todo">
+        <div className="left">
+          <input type="checkbox" name="" id="" />
+          <p> {props.data} </p>{" "}
+        </div>{" "}
+        <div className="right">
+          <i className="fas fa-times"> </i>{" "}
+        </div>{" "}
+      </div>{" "}
+    </div>
+  );
+}
+
+export default Todos;
